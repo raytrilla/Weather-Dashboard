@@ -7,7 +7,17 @@ const getWeatherDetails = (cityInput, lat, lon) => {
     const WEATHER_API_URL = `http://api.openweathermap.org/data/2.5/forecast/?lat=${lat}&lon=${lon}&appid=${API_KEY}`;
     
     fetch(WEATHER_API_URL).then(res => res.json()).then(data => {
-        console.log(data);
+
+        const uniqueForecastDays = [];
+        const fiveDaysforecast = data.list.filter(forecast => {
+            const forecastDate = new Date(forecast.dt_txt).getDate();
+            if(!uniqueForecastDays.includes(forecastDate)) {
+                return uniqueForecastDays.push(forecastDate);
+            }
+        })
+
+        console.log(fiveDaysforecast);
+
     }).catch(() => {
         alert('Error occured while trying to fetch the weather forecast!')
     })
