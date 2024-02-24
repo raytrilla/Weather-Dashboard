@@ -22,7 +22,7 @@ This dashboard is created following the following user story:
   * When a user click on a city in the search history they are again presented with current and future conditions for that city
 
 Live Weather Dashboard link
-
+https://raytrilla.github.io/Weather-Dashboard/
 
 Github repository Link
 https://github.com/raytrilla/Weather-Dashboard
